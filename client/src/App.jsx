@@ -161,7 +161,7 @@ function App({ mode, toggleMode }) {
           <Button
             variant="contained"
             color="secondary"
-            onClick={handleDecompress}
+            onClick={()=>{(handleDecompress, setStats(null))}}
             startIcon={<RefreshIcon />}
           >
             Decompress
