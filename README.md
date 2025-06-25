@@ -1,4 +1,5 @@
 # 📦 Data Compression & Decompression Portal
+(Link: https://data-compression-decompression-port-drab.vercel.app/)
 
 A full-stack web application to compress and decompress text, image, and binary files using popular compression algorithms like **Huffman Coding**, **Run-Length Encoding (RLE)**, and **LZ77**.
 
