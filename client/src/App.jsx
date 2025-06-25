@@ -23,6 +23,7 @@ function App({ mode, toggleMode }) {
   const [decompressedBlob, setDecompressedBlob] = useState(null);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [buttonsDisable, setButtonsDisable] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
 
   const handleCompress = async () => {
@@ -118,6 +119,7 @@ function App({ mode, toggleMode }) {
               variant="contained"
               component="label"
               startIcon={<UploadFileIcon />}
+              onClick={setButtonsDisable(true)}
             >
               Upload File
               <input
@@ -153,7 +155,7 @@ function App({ mode, toggleMode }) {
             <Button
               variant="outlined"
               onClick={handleDownload}
-              disabled={!compressedBlob}
+              disabled={!compressedBlob || buttonsDisable}
               startIcon={<DownloadIcon />}
             >
               Download Compressed
@@ -171,7 +173,7 @@ function App({ mode, toggleMode }) {
             </Button>
             <Button
               variant="outlined"
-              disabled={!decompressedBlob}
+              disabled={!decompressedBlob || buttonsDisable}
               onClick={() => {
                 const url = URL.createObjectURL(decompressedBlob);
                 const a = document.createElement("a");
