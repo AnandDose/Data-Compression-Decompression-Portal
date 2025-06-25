@@ -6,75 +6,88 @@ A full-stack web application to compress and decompress text, image, and binary 
 
 ## ✨ Features
 
-- 🔼 **File Upload:** Upload any `.txt`, `.bmp`, `.bin`, etc.
+- 🔼 **File Upload:** Upload `.txt`, `.bmp`, `.bin`, and more.
 - 🗜️ **Compression Algorithms:**
   - Huffman Coding
   - Run-Length Encoding (RLE)
   - LZ77
-- 📉 **Compression Stats:** Original size, compressed size, compression ratio, and time taken.
-- 💾 **Download:** Download compressed and decompressed files.
+- 📉 **Compression Stats:** View original size, compressed size, compression ratio, and time taken.
+- 💾 **Download:** Download both compressed and decompressed files.
 - 🌗 **Dark Mode:** Toggle between light and dark themes.
-- ⚠️ **Smart Alerts:** Warns users when an algorithm may increase file size (like RLE on `.bin`).
-- ✅ **Binary/Image Support:** Accurately handles binary and image file formats.
-- 📦 **Full Backend Support:** Compression logic is processed server-side via Express.
+- ⚠️ **Smart Alerts:** Warns if an algorithm may increase file size (e.g., RLE on `.bin`).
+- ✅ **Binary/Image Support:** Handles binary and image files accurately.
+- 📦 **Full Backend Support:** Compression logic processed server-side via Express.
 
 ---
 
 ## 🚀 Tech Stack
 
-| Frontend        | Backend         | Compression Algorithms |
-|-----------------|-----------------|-------------------------|
-| React + Vite    | Node.js + Express | Custom JS Implementations |
-| MUI (Material UI) | Multer (for file upload) | Huffman, RLE, LZ77 |
-| notistack (toasts) | FS, Path        |                         |
+| Frontend                | Backend                | Compression Algorithms          |
+|-------------------------|------------------------|---------------------------------|
+| React + Vite            | Node.js + Express      | Custom JS Implementations       |
+| MUI (Material UI)       | Multer (file upload)   | Huffman, RLE, LZ77              |
+| notistack (toasts)      | FS, Path               |                                 |
 
 ---
 
 ## 📂 Project Structure
 
+```
 Data-Compression-Portal/
-├── client/ # React frontend
-│ ├── src/
-│ │ ├── App.jsx # Main UI with logic
-│ │ └── ...
-│ └── ...
-├── server/ # Node.js backend
-│ ├── algorithms/ # Huffman, RLE, LZ77 modules
-│ │ ├── huffman.js
-│ │ ├── rle.js
-│ │ └── lz77.js
-│ └── server.js # API routes
+├── client/         # React frontend
+│   ├── src/
+│   │   ├── App.jsx # Main UI with logic
+│   │   └── ...
+│   └── ...
+├── server/         # Node.js backend
+│   ├── algorithms/ # Huffman, RLE, LZ77 modules
+│   │   ├── huffman.js
+│   │   ├── rle.js
+│   │   └── lz77.js
+│   └── server.js   # API routes
 └── README.md
-
+```
 
 ---
 
 ## 🧑‍💻 Getting Started
 
-### 1. Clone the Repo
+1. **Clone the Repo**
+    ```bash
+    git clone https://github.com/<your-username>/data-compression-portal.git
+    cd data-compression-portal
+    ```
 
-```bash
-git clone https://github.com/<your-username>/data-compression-portal.git
-cd data-compression-portal
+2. **Install Dependencies**
 
-cd client
-npm install
+    - **Client**
+        ```bash
+        cd client
+        npm install
+        ```
 
-cd ../server
-npm install
+    - **Server**
+        ```bash
+        cd ../server
+        npm install
+        ```
 
-# In server/
-npm start
+3. **Run the Application**
 
-# In client/ (in a second terminal)
-npm run dev
+    - **Start the Server**
+        ```bash
+        # In server/
+        npm start
+        ```
 
-Visit: http://localhost:5173
+    - **Start the Client (in a second terminal)**
+        ```bash
+        # In client/
+        npm run dev
+        ```
 
+4. **Visit:** [http://localhost:5173](http://localhost:5173)
 
+---
 
-
-
-
-
-Built with ❤️ by Anand Dose
+_Built with ❤️ by Anand Dose_
