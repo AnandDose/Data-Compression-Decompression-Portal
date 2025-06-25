@@ -62,6 +62,7 @@ function App({ mode, toggleMode }) {
       enqueueSnackbar("Compression failed: " + err.message, { variant: "error" });
     } finally {
       setLoading(false);
+      setButtonsDisable(false);
     }
   };
 
@@ -84,6 +85,7 @@ function App({ mode, toggleMode }) {
       enqueueSnackbar("Decompression failed: " + err.message, { variant: "error" });
     } finally {
       setLoading(false);
+      setButtonsDisable(false);
     }
   };
 
@@ -119,13 +121,18 @@ function App({ mode, toggleMode }) {
               variant="contained"
               component="label"
               startIcon={<UploadFileIcon />}
-              onClick={setButtonsDisable(true)}
             >
               Upload File
               <input
                 hidden
                 type="file"
-                onChange={(e) => setFile(e.target.files[0])}
+                onChange={(e) => {
+                  setFile(e.target.files[0]);
+                  setCompressedBlob(null);
+                  setDecompressedBlob(null);
+                  setStats(null);
+                  setButtonsDisable(true); 
+                }}
               />
             </Button>
             {file && <Typography>{file.name}</Typography>}
