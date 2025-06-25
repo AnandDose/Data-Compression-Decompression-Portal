@@ -54,7 +54,7 @@ Data-Compression-Portal/
 
 1. **Clone the Repo**
     ```bash
-    git clone https://github.com/<your-username>/data-compression-portal.git
+    git clone [https://github.com/<your-username>/data-compression-portal.git](https://github.com/AnandDose/Data-Compression-Decompression-Portal.git)
     cd data-compression-portal
     ```
 
